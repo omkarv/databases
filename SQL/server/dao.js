@@ -1,5 +1,31 @@
 var mysql =require('mysql');
+var Sequelize = require("sequelize");
 
+
+
+exports.readMessagesSerialized = function(callback){
+  var sequelize = new Sequelize("chat", "root", "mario");
+
+  var Message = sequelize.define('Message', {
+    username: Sequelize.STRING,
+    room: Sequelize.STRING,
+    text: Sequelize.STRING,
+    ID: { type: Sequelize.INTEGER,
+          primaryKey: true,
+          autoIncrement: true},
+    createdAt: {type: Sequelize.DATE,
+                defaultValue: Sequelize.NOW }
+  });
+
+  Message.sync().success(function() {
+    Message.findAll().success(function(rows){
+      messages = rows;
+      callback(rows);
+      console.log(rows);
+    });
+  });
+
+};
 
 // create function
 exports.createMessage = function(message, callback) {
@@ -53,3 +79,4 @@ exports.readMessages = function(callback) {
     dbConnection.end();
   });
 };
+

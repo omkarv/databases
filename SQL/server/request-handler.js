@@ -13,7 +13,7 @@ var defaultCorsHeaders = {
 
 exports.retrieveMessages = function (request, response) {
 
-  dao.readMessages(function (messages) {
+  dao.readMessagesSerialized(function (messages) {
     response.writeHead(200, defaultCorsHeaders);
     response.end(JSON.stringify(messages));
   });
