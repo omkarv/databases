@@ -4,7 +4,7 @@
  */
 
 var Sequelize = require("sequelize");
-var sequelize = new Sequelize("chat", "bacon", "pass");
+var sequelize = new Sequelize("chat", "root", "mario");
 /* TODO this constructor takes the database name, username, then password.
  * Modify the arguments if you need to */
 

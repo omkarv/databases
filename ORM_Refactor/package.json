@@ -1,0 +1,14 @@
+{
+  "name": "chatterbox",
+  "version": "0.0.1",
+  "main": "server/main.js",
+  "scripts": {
+    "start": "node server/basic-server.js"
+  },
+  "author": "Hack Reactor",
+  "license": "Copyright 2013, Hack Reactor. All rights reserved.",
+  "dependencies": {
+    "sequelize": "^1.7.4"
+  },
+  "devDependencies": {}
+}
