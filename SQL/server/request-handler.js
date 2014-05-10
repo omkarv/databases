@@ -27,9 +27,10 @@ exports.retrieveCors = function (request, response) {
 exports.sendMessage = function (request, response) {
   var message =  request.body;
 
-  dao.createMessage(message, function() {
-    dao.readLastMessage(function (savedMessage) {
-      debugger;
+  dao.createMessageSequelized(message, function() {
+    dao.readLastMessageSequelized(function (savedMessage) {
+      // debugger;
+      console.log(savedMessage);
       response.writeHead(200, defaultCorsHeaders);
       response.end(JSON.stringify(savedMessage));
     });

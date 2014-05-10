@@ -1,9 +1,9 @@
 {
   "name": "chatterbox",
   "version": "0.0.1",
-  "main": "server/main.js",
+  "main": "start.js",
   "scripts": {
-    "start": "node server/basic-server.js"
+    "start": "node start.js"
   },
   "author": "Hack Reactor",
   "license": "Copyright 2013, Hack Reactor. All rights reserved.",
